@@ -2,29 +2,37 @@ import random
 
 # Game code:
 def game():
-    # Computers choice:
+    # Computers choices:
     item_choices = ["rock", "paper", "scissors"]
-    computer_choice = random.choice(item_choices)
     # Scores
     comp_score = 0
     player_score = 0
     # Game logic:
     while comp_score < 3 or player_score < 3:
+        computer_choice = random.choice(item_choices)
         player_choice = input("Choose 'ROCK', 'PAPER' OR 'SCISSORS'")
-        if player_choice == computer_choice:
-            print("Draw! \nRun it back!")
+        if player_choice.lower() == computer_choice:
+            print("Draw! \nRun it back!\n")
         elif player_choice.lower() == 'rock' and computer_choice == 'paper':
-            pass
+            print("Computer chose paper, it gained 1 point\n")
+            comp_score += 1
         elif player_choice.lower() == 'rock' and computer_choice == 'scissors':
-            pass
+            print("Computer chose scissors, you gained 1 point\n")
+            player_score += 1
         elif player_choice.lower() == 'paper' and computer_choice == 'rock':
-            pass
+            print("Computer chose rock, you gained 1 point\n")
+            player_score += 1
         elif player_choice.lower() == 'paper' and computer_choice == 'scissors':
-            pass
+            print("Computer chose scissors, it gained 1 point\n")
+            comp_score += 1
         elif player_choice.lower() == 'scissors' and computer_choice == 'paper':
-            pass
+            print("Computer chose paper, you gained 1 point\n")
+            player_score += 1
         elif player_choice.lower() == 'scissors' and computer_choice == 'rock':
-            pass
+            print("Computer chose rock, it gained 1 point\n")
+            comp_score += 1
+        else:
+            print("Please choose either rock, paper or scissors. If you did and the game didn't work please double check your spelling")
     
 
 
